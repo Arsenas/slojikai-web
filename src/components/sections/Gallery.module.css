@@ -3,7 +3,7 @@
   background: url("/src/assets/images/gallery-bg.jpg") center/cover no-repeat;
 }
 
-/* HEADER LIKE ABOUT SECTION PAPER */
+/* PAPER HEADER */
 .headerPaper {
   max-width: 600px;
   background: rgba(255, 255, 245, 0.92);
@@ -30,27 +30,31 @@
   color: #3a2b20;
 }
 
-/* PHOTO WALL */
-.wall {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
+/* GRID — MAIN CHANGE */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  justify-content: center;
+  justify-items: center;
 }
 
-/* Larger photo papers */
+/* PHOTO PAPER */
 .photoPaper {
-  width: 320px; /* BIGGER */
+  width: 100%;
+  max-width: 280px;
+
   background: rgba(255, 255, 245, 0.9);
   padding: 12px;
+
   border: 2px solid rgba(30, 20, 10, 0.55);
   box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.45);
-  transition: transform 0.25s ease;
+
+  transform: rotate(-1deg);
+  transition: transform 0.2s ease;
 }
 
 .photoPaper:hover {
-  transform: scale(1.06) rotate(0deg);
+  transform: scale(1.04) rotate(0deg);
 }
 
 .photoPaper img {
@@ -59,15 +63,22 @@
   border: 1px solid rgba(0, 0, 0, 0.45);
 }
 
-/* Remove captions entirely */
-.caption {
-  display: none;
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-/* MOBILE */
-@media (max-width: 700px) {
-  .photoPaper {
-    width: 100%;
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 
   .headerPaper {

@@ -1,75 +1,49 @@
 import styles from "./About.module.css";
 
-import hero from "../../assets/images/utopenc.png";
-
-import p1 from "../../assets/images/buterbrod.jpg";
-import p2 from "../../assets/images/shots.jpg";
-import p3 from "../../assets/images/beer.jpg";
-import p4 from "../../assets/images/pickle.png";
+import photo1 from "../../assets/images/about-1.jpg";
+import photo2 from "../../assets/images/about-2.jpg";
+import photo3 from "../../assets/images/about-3.jpg";
 
 export function About() {
   return (
-    <section id="about" className={styles.section}>
-      <div className={styles.texture}></div>
-
-      <div className={styles.inner}>
-        {/* TEXT */}
-        <div className={styles.textBox}>
-          <h2 className={styles.title}>КAS PER BARAS?</h2>
+    <section id="about" className={styles.about}>
+      <div className={styles.wrapper}>
+        {/* LEFT — TEXT */}
+        <div className={styles.left}>
+          <h2 className={styles.heading}>Kas mes tokie?</h2>
 
           <p>
-            Slojikai nėra stilizacija. Tai <strong>paveldo zona</strong>, kur 90’ųjų Lietuva tiesiog nesutiko išnykti.
+            Slojikai<span className={styles.asterisk}>*</span> — tai baras, kuris nesistengia būti gražesnis už savo
+            kilmę. Mes kilę iš stiklainio: rūgštaus, paprasto, lietuviškai-slaviško, iš tų laikų, kai skoniai gimdavo ne
+            laboratorijose, o virtuvėse su nusilupusiais stalviršiais.
           </p>
 
           <p>
-            Čia radiatoriai leidžia alų, agurkai turi daugiau charakterio nei žmonės, o kiekviena detalė yra tikras
-            artefaktas iš močiutės sandėliuko.
+            Čia nebus sterilios elegancijos. Bus tamsa, metalas, šaltis ir šiluma viename — kaip senas daugiabučio
+            rūsys, kuriame kiekvienas stiklainis turi savo kvapą ir istoriją.
           </p>
 
           <p>
-            Jei ieškai sterilumo – eik į prekybos centrą. Jei ieškai tikrų prisiminimų kvapo – sveikas sugrįžęs namo.
+            Mes patys nesame konceptualūs. Mes tiesiog tokie esam: kiek pašiurpę, kiek nostalgiški, kiek ironiški, be
+            jokių pretenzijų būti barų scenos dalimi.
           </p>
 
-          <p className={styles.small}>Baras. Muziejus. Chaosas. Tikrumas.</p>
-        </div>
+          <p>Jeigu nori vietos, kuri neprašytų tavęs vaidinti — sėsk. Čia tavęs niekas netaiso. Čia tik pripila.</p>
 
-        {/* RIGHT SIDE: MUSEUM COLUMN */}
-        <div className={styles.museumColumn}>
-          {/* MAIN EXHIBIT */}
-          <div className={styles.heroExhibit}>
-            <img src={hero} />
-            <div className={styles.pin}></div>
-            <span className={styles.label}>Eksponatas Nr.1 — “Utopencas”</span>
-          </div>
-
-          {/* CHAOS COLLAGE */}
-          <div className={styles.collage}>
-            <img className={styles.ph1} src={p1} />
-            <img className={styles.ph2} src={p2} />
-            <img className={styles.ph3} src={p3} />
-            <img className={styles.ph4} src={p4} />
-
-            <div className={styles.pinSmall}></div>
-            <div className={styles.pinSmall2}></div>
+          <div className={styles.footnote}>
+            <span className={styles.star}>*</span>
+            <span>
+              <strong className={styles.title}>Slojikas</strong> – stiklainis; šnekamoji forma iš slaviško „слойик“. Mes
+              šį žodį prikėlėm naujam gyvenimui — šįkart su alkoholiu.
+            </span>
           </div>
         </div>
-      </div>
 
-      {/* BOTTOM EXHIBITS */}
-      <div className={styles.exhibitRow}>
-        <div className={styles.exhibitCard}>
-          <div className={styles.exhibitImg}></div>
-          <p>Eksponatas Nr. 4 – Radiatoriaus kranas (dar veikiantis)</p>
-        </div>
-
-        <div className={styles.exhibitCard}>
-          <div className={styles.exhibitImg2}></div>
-          <p>Eksponatas Nr. 5 – Agurko kapsulė, XXa. pabaiga</p>
-        </div>
-
-        <div className={styles.exhibitCard}>
-          <div className={styles.exhibitImg3}></div>
-          <p>Eksponatas Nr. 6 – „Elektronika“ siurblys, legenda</p>
+        {/* RIGHT — MESSY IMAGES */}
+        <div className={styles.right}>
+          <img src={photo1} className={styles.photo1} />
+          <img src={photo2} className={styles.photo2} />
+          <img src={photo3} className={styles.photo3} />
         </div>
       </div>
     </section>

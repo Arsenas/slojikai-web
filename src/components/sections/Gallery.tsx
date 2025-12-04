@@ -15,21 +15,14 @@ export function Gallery() {
   return (
     <section id="gallery" className={styles.gallery}>
       <div className="container">
-        {/* PAPER HEADER */}
         <div className={styles.headerPaper}>
           <h2>Nuotraukų lenta</h2>
           <p>Kai kurios nuotraukos kreivos. Kai kurios neplanuotos. Kaip ir mūsų baras.</p>
         </div>
 
-        <div className={styles.wall}>
+        <div className={styles.grid}>
           {images.map((src, i) => (
-            <div
-              key={i}
-              className={styles.photoPaper}
-              style={{
-                transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-              }}
-            >
+            <div key={i} className={styles.photoPaper}>
               <img src={src} alt="" />
             </div>
           ))}
