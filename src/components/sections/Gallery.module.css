@@ -1,66 +1,72 @@
 .gallery {
-  padding: 140px 20px 160px;
-  background: url("/src/assets/images/gallery-bg.jpg") center/cover no-repeat;
+  background: #0b0b0b;
+  padding: 7rem 40px;
+  border-top: 3px solid rgba(255, 230, 180, 0.18);
+  border-bottom: 3px solid rgba(255, 230, 180, 0.18);
+
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.9), 0 -4px 0 rgba(0, 0, 0, 0.7), 0 2px 0 rgba(0, 0, 0, 0.9),
+    0 4px 0 rgba(0, 0, 0, 0.7);
 }
 
-/* PAPER HEADER */
-.headerPaper {
-  max-width: 600px;
-  background: rgba(255, 255, 245, 0.92);
-  padding: 26px 30px;
-  border: 2px solid rgba(30, 20, 10, 0.45);
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35);
-  margin: 0 auto 50px;
-  transform: rotate(-1.2deg);
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.headerPaper h2 {
-  font-family: "Staatliches", sans-serif;
-  font-size: 2.4rem;
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.heading {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 2.6rem;
+  color: #ffe7b6;
   text-transform: uppercase;
-  margin: 0 0 12px;
-  letter-spacing: 0.09em;
-  color: #2a1e15;
+  letter-spacing: 0.06em;
+  transform: rotate(-1.5deg);
+  margin-bottom: 0.8rem;
 }
 
-.headerPaper p {
-  margin: 0;
-  font-family: "PT Serif", serif;
-  font-size: 1.1rem;
-  color: #3a2b20;
+.subheading {
+  font-family: "Cousine", monospace;
+  opacity: 0.85;
+  font-size: 1rem;
 }
 
-/* GRID — MAIN CHANGE */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  justify-items: center;
+  gap: 26px;
 }
 
-/* PHOTO PAPER */
-.photoPaper {
-  width: 100%;
-  max-width: 280px;
-
-  background: rgba(255, 255, 245, 0.9);
-  padding: 12px;
-
-  border: 2px solid rgba(30, 20, 10, 0.55);
+/* Photo frame */
+.photoWrap {
+  background: rgba(255, 255, 240, 0.9);
+  border: 2px solid rgba(255, 230, 180, 0.35);
   box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.45);
 
-  transform: rotate(-1deg);
-  transition: transform 0.2s ease;
+  padding: 10px;
+  border-radius: 4px;
+
+  /* Slojikiškas vibe */
+  transform: rotate(-1.2deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.photoPaper:hover {
-  transform: scale(1.04) rotate(0deg);
+.photoWrap:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.55);
 }
 
-.photoPaper img {
+.photo {
   width: 100%;
-  display: block;
-  border: 1px solid rgba(0, 0, 0, 0.45);
+  height: 100%;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  object-fit: cover;
 }
 
 /* RESPONSIVE */
@@ -76,12 +82,12 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 520px) {
   .grid {
     grid-template-columns: 1fr;
   }
 
-  .headerPaper {
-    transform: rotate(0.4deg);
+  .heading {
+    transform: rotate(-0.5deg);
   }
 }

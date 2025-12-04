@@ -23,7 +23,10 @@ export function Nav() {
           ))}
         </nav>
 
-        <img src={logo} alt="Slojikai" className={styles.logo} />
+        {/* LOGO AS A CLICKABLE LINK */}
+        <a href="#hero" className={styles.logoLink}>
+          <img src={logo} alt="Slojikai" className={styles.logo} />
+        </a>
 
         <nav className={styles.sideNav}>
           {NAV_RIGHT.map((item) => (

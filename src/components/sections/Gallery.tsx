@@ -14,16 +14,16 @@ const images = [img1, img2, img3, img4, img5, img6, img7, img8];
 export function Gallery() {
   return (
     <section id="gallery" className={styles.gallery}>
-      <div className="container">
-        <div className={styles.headerPaper}>
-          <h2>Nuotraukų lenta</h2>
-          <p>Kai kurios nuotraukos kreivos. Kai kurios neplanuotos. Kaip ir mūsų baras.</p>
+      <div className={styles.inner}>
+        <div className={styles.header}>
+          <h2 className={styles.heading}>Nuotraukų lenta</h2>
+          <p className={styles.subheading}>Baro gyvenimo fragmentai — truputį kreivi, truputį chaotiški, bet tikri.</p>
         </div>
 
         <div className={styles.grid}>
           {images.map((src, i) => (
-            <div key={i} className={styles.photoPaper}>
-              <img src={src} alt="" />
+            <div key={i} className={styles.photoWrap}>
+              <img src={src} alt="" className={styles.photo} />
             </div>
           ))}
         </div>
