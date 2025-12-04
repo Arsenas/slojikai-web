@@ -1,0 +1,188 @@
+.section {
+  position: relative;
+  padding: 160px 0 120px;
+  background: #050609;
+  color: #f6f2e8;
+  overflow: hidden;
+}
+
+.texture {
+  position: absolute;
+  inset: 0;
+  background: url("../../assets/images/carpet.jpg") center/cover;
+  opacity: 0.12;
+  filter: blur(3px);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* MAIN LAYOUT */
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* TEXT */
+.textBox {
+  max-width: 520px;
+}
+
+.title {
+  font-family: "Cousine", monospace;
+  font-size: 3.3rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 26px;
+  text-transform: uppercase;
+}
+
+.textBox p {
+  margin: 0 0 22px;
+  line-height: 1.65;
+  font-size: 1.1rem;
+  color: rgba(245, 240, 230, 0.92);
+}
+
+.small {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* MUSEUM COLUMN */
+.museumColumn {
+  position: relative;
+  width: 460px;
+}
+
+/* HERO EXHIBIT */
+.heroExhibit {
+  position: relative;
+  background: rgba(25, 20, 16, 0.9);
+  padding: 14px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+  rotate: -1deg;
+}
+
+.heroExhibit img {
+  width: 100%;
+  display: block;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.pin {
+  position: absolute;
+  top: -12px;
+  right: 40%;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e6d5b7 35%, #8b6843 90%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.label {
+  display: block;
+  margin-top: 10px;
+  opacity: 0.7;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* COLLAGE OF PHOTOS */
+.collage {
+  position: relative;
+  margin-top: 40px;
+  height: 260px;
+}
+
+.collage img {
+  position: absolute;
+  width: 160px;
+  border: 3px solid #fff2;
+  box-shadow: 4px 4px 0 #0004;
+}
+
+.ph1 {
+  top: 0;
+  left: 0;
+  rotate: -6deg;
+}
+.ph2 {
+  top: 20px;
+  right: 0;
+  rotate: 5deg;
+}
+.ph3 {
+  bottom: 0;
+  left: 40px;
+  rotate: 3deg;
+}
+.ph4 {
+  bottom: 20px;
+  right: 30px;
+  rotate: -4deg;
+}
+
+.pinSmall,
+.pinSmall2 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #d8c7a4 30%, #7c6040 90%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.pinSmall {
+  top: -8px;
+  left: 46px;
+}
+.pinSmall2 {
+  bottom: -10px;
+  right: 70px;
+}
+
+/* BOTTOM EXHIBIT ROW */
+.exhibitRow {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.exhibitCard {
+  width: 260px;
+  padding: 14px;
+  background: rgba(255, 255, 230, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #f6f2e8aa;
+}
+
+.exhibitImg,
+.exhibitImg2,
+.exhibitImg3 {
+  width: 100%;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 8px;
+  filter: brightness(0.85);
+}
+
+.exhibitImg {
+  background-image: url("../../assets/images/beer.jpg");
+}
+.exhibitImg2 {
+  background-image: url("../../assets/images/pickle.png");
+}
+.exhibitImg3 {
+  background-image: url("../../assets/images/shots.jpg");
+}

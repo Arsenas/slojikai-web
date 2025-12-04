@@ -1,0 +1,79 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0b0b0b;
+  border-bottom: 3px solid rgba(255, 230, 180, 0.25);
+  padding: 10px 0;
+
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.9), 0 4px 0 rgba(0, 0, 0, 0.7);
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* suteikia senos iškabos balansą */
+  gap: 40px;
+}
+
+/* LOGO */
+.logo {
+  height: 70px;
+  filter: contrast(1.15) brightness(1.1);
+}
+
+/* ŠONINIAI LINK BLOKAI */
+.sideNav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  font-family: "Cousine", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* LINKS */
+.link {
+  position: relative;
+  color: #f9f4e5;
+  font-size: 0.88rem;
+  transform: rotate(-1deg);
+}
+
+.link:hover {
+  transform: rotate(0deg);
+  color: #ffe7b6;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #f7e7c2;
+  transition: width 0.25s ease-out;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* MOBILE — viską slepiam, darysim burger'į vėliau */
+@media (max-width: 720px) {
+  .sideNav {
+    display: none;
+  }
+
+  .logo {
+    height: 48px;
+  }
+}

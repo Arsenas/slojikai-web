@@ -1,0 +1,176 @@
+.info {
+  background: #050609;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Clean 2-column layout */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Typography */
+.heading {
+  font-family: "Staatliches", system-ui, sans-serif;
+  font-size: 2rem;
+  margin: 0 0 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lead {
+  margin: 0 0 18px;
+  color: rgba(248, 243, 234, 0.86);
+}
+
+/* Blocks */
+.block {
+  margin-top: 18px;
+}
+
+.block h3 {
+  margin: 0 0 6px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.block p {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+}
+
+.small {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.block a {
+  text-decoration: underline;
+}
+
+/* TV FRAME SETUP */
+.tvFrame {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.tv {
+  width: 100%;
+  pointer-events: none;
+  z-index: 5;
+  position: relative;
+}
+
+/* SCREEN AREA (MAP INSIDE TV) */
+.screen {
+  position: absolute;
+  top: 15.5%; /* tuned to match your TV PNG */
+  left: 8.5%;
+  width: 90%;
+  height: 65%;
+  overflow: hidden;
+  display: flex;
+}
+
+/* Fake map stays exactly inside TV screen */
+.mapFake {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, var(--color-wall-blue), var(--color-carpet-red));
+  color: #0b0504;
+
+  border-radius: 6px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mapTitle {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+}
+
+.mapSubtitle {
+  font-size: 1rem;
+}
+
+.mapHint {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .mapWrapper {
+    order: -1;
+  }
+
+  .tvFrame {
+    max-width: 360px;
+  }
+}
+/* Typography */
+.heading {
+  font-family: "Staatliches", system-ui, sans-serif;
+  font-size: 2.2rem;
+  margin: 0 0 22px; /* daugiau oro po heading */
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.lead {
+  margin: 0 0 26px; /* daugiau vietos prieš sekcijas */
+  color: rgba(248, 243, 234, 0.87);
+  line-height: 1.6; /* airy, mažiau "suspausta" */
+  max-width: 580px; /* atitinka TV plotį ir neatrodo siaurai */
+}
+
+.block {
+  margin-top: 28px; /* didesni tarpai tarp skyrių */
+}
+
+.block h3 {
+  margin: 0 0 10px; /* daugiau oro po heading */
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+
+.block p {
+  margin: 0 0 10px; /* daugiau vietos tekstui kvėpuoti */
+  font-size: 0.95rem;
+  line-height: 1.55; /* gražesnis skaitymui */
+}
+
+.small {
+  font-size: 0.82rem;
+  opacity: 0.8;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Grid: daugiau balanso tarp kolonų */
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; /* kairė šiek tiek platesnė */
+  gap: 60px; /* daugiau oro tarp kolonų */
+  align-items: flex-start;
+}

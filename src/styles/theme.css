@@ -1,0 +1,13 @@
+:root {
+  --color-bg: #070b0d;
+  --color-bg-alt: #11151a;
+  --color-wall-blue: #7ab6c9;
+  --color-carpet-red: #8b1e2d;
+  --color-mustard: #d9a441;
+  --color-pickle-green: #4d6b3c;
+  --color-paper: #f2e7d5;
+  --color-ink: #111111;
+
+  --radius-card: 12px;
+  --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.45);
+}

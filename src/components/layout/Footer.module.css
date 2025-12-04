@@ -1,0 +1,56 @@
+.footer {
+  background: #0b0b0b; /* tas pats kaip NAV */
+  border-top: 3px solid rgba(255, 230, 180, 0.25); /* toks pats border kaip NAV */
+  padding: 14px 20px 20px;
+
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.9), 0 -4px 0 rgba(0, 0, 0, 0.7); /* nav shadow flipped */
+}
+
+.inner {
+  max-width: 1120px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: "Cousine", monospace; /* tokia pati kaip nav sideNav */
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+
+  color: #f9f4e5; /* tokia pati kaip nav text */
+}
+
+.note {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Signature (arsenij.dev) */
+.signature {
+  color: #f7e7c2;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.signature::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background: #fbe5b5;
+  transition: width 0.25s ease-out;
+}
+
+.signature:hover {
+  color: #ffe7b6;
+}
+
+.signature:hover::after {
+  width: 100%;
+}

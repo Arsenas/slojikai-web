@@ -1,0 +1,49 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background stays fullscreen */
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* PNG overlays must NOT stretch */
+.layer {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 0.05s linear;
+  z-index: 3;
+}
+
+/* TRUE positions — these match your PNG crops */
+.hose {
+  top: 0;
+  left: 0;
+}
+
+.head {
+  top: 0;
+  left: 0;
+}
+
+.jar {
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.65) 100%);
+  z-index: 5;
+  pointer-events: none;
+}

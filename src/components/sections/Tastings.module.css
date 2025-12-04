@@ -1,0 +1,67 @@
+.tastings {
+  background: #050609;
+}
+
+.header {
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+.header h2 {
+  font-family: "Staatliches", system-ui, sans-serif;
+  font-size: 2rem;
+  margin: 0 0 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header p {
+  margin: 0;
+  color: rgba(248, 243, 234, 0.86);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-card);
+  padding: 18px 18px 20px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.card p {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.details {
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+
+.contactHint {
+  margin-top: 28px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.contactHint a {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
