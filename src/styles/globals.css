@@ -16,11 +16,6 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("/src/assets/images/carpet.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   color: #f9f5ee;
 }
 

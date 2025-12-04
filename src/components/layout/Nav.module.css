@@ -1,52 +1,46 @@
 .header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-
   z-index: 999;
-  background: #0b0b0b;
-  border-bottom: 3px solid rgba(255, 230, 180, 0.25);
-  padding: 10px 0;
 
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(6px);
+
+  border-bottom: 3px solid rgba(255, 230, 180, 0.25);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.9), 0 4px 0 rgba(0, 0, 0, 0.7);
 }
+
 .inner {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 12px 40px;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  /* suteikia senos iškabos balansą */
-  gap: 40px;
+  position: relative;
 }
 
-/* LOGO */
-.logo {
-  height: 70px;
-  filter: contrast(1.15) brightness(1.1);
-}
-
-/* ŠONINIAI LINK BLOKAI */
-.sideNav {
+/* DESKTOP LEFT/RIGHT NAVS */
+.leftNav,
+.rightNav {
   display: flex;
   gap: 24px;
-  flex-wrap: wrap;
-
-  font-family: "Cousine", monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
+  align-items: center;
 }
 
-/* LINKS */
 .link {
-  position: relative;
+  font-family: "Cousine", monospace;
   color: #f9f4e5;
-  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.9rem;
+
+  position: relative;
   transform: rotate(-1deg);
+  transition: 0.2s;
 }
 
 .link:hover {
@@ -61,25 +55,101 @@
   bottom: -3px;
   width: 0%;
   height: 2px;
-  background: #f7e7c2;
-  transition: width 0.25s ease-out;
+  background: #ffe7b6;
+  transition: width 0.25s;
 }
 
 .link:hover::after {
   width: 100%;
 }
 
-/* MOBILE — viską slepiam, darysim burger'į vėliau */
+/* LOGO */
+.logo {
+  height: 70px;
+  filter: contrast(1.1) brightness(1.08);
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+/* BURGER — mobile only */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 32px;
+  height: 24px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  right: 20px;
+}
+
+.burger span {
+  height: 3px;
+  background: #f9f4e5;
+  border-radius: 2px;
+  transition: 0.25s;
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* MOBILE MENU */
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.92);
+  padding: 20px 30px;
+  gap: 18px;
+
+  border-bottom: 2px solid rgba(255, 230, 180, 0.25);
+
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+.mobileMenu.open {
+  display: flex;
+  transform: translateY(0);
+}
+.mobileItem {
+  font-family: "Cousine", monospace;
+  color: #ffe7b6;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 230, 180, 0.2);
+}
+
+/* RESPONSIVE */
 @media (max-width: 720px) {
-  .sideNav {
+  .leftNav,
+  .rightNav {
     display: none;
   }
 
   .logo {
-    height: 48px;
+    height: 55px;
   }
-}
-.logoLink {
-  display: flex;
-  align-items: center;
+
+  .burger {
+    display: flex;
+  }
 }

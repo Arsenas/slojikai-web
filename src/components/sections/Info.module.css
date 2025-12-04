@@ -1,177 +1,140 @@
 .info {
   background: #050609;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: #f9f4e5;
+  padding: 7rem 20px;
+  border-top: 3px solid rgba(255, 230, 180, 0.18);
+  border-bottom: 3px solid rgba(255, 230, 180, 0.18);
+
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.9), 0 -4px 0 rgba(0, 0, 0, 0.7), 0 2px 0 rgba(0, 0, 0, 0.9),
+    0 4px 0 rgba(0, 0, 0, 0.7);
 }
 
-/* Clean 2-column layout */
+/* MAIN GRID */
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 40px;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
   align-items: flex-start;
 }
 
-/* Typography */
+/* TYPOGRAPHY */
 .heading {
-  font-family: "Staatliches", system-ui, sans-serif;
-  font-size: 2rem;
-  margin: 0 0 16px;
+  font-family: "Staatliches", sans-serif;
+  font-size: 2.4rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  margin-bottom: 22px;
 }
 
 .lead {
-  margin: 0 0 18px;
-  color: rgba(248, 243, 234, 0.86);
+  margin-bottom: 26px;
+  color: rgba(248, 243, 234, 0.85);
+  font-family: "Cousine", monospace;
+  line-height: 1.65;
+  max-width: 600px;
 }
 
-/* Blocks */
+/* INFO BLOCKS */
 .block {
-  margin-top: 18px;
+  margin-top: 28px;
 }
 
 .block h3 {
-  margin: 0 0 6px;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.95rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.13em;
+  font-size: 1rem;
 }
 
 .block p {
-  margin: 0 0 6px;
-  font-size: 0.9rem;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  font-family: "Cousine", monospace;
 }
 
 .small {
-  font-size: 0.8rem;
-  opacity: 0.8;
+  font-size: 0.82rem;
+  opacity: 0.82;
+  line-height: 1.4;
 }
 
 .block a {
   text-decoration: underline;
+  color: #ffe7b6;
 }
 
-/* TV FRAME SETUP */
+/* TV FRAME */
 .tvFrame {
   position: relative;
   width: 100%;
   max-width: 460px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .tv {
   width: 100%;
-  pointer-events: none;
-  z-index: 5;
   position: relative;
+  z-index: 5;
+  pointer-events: none;
 }
 
-/* SCREEN AREA (MAP INSIDE TV) */
+/* Embedded screen area */
 .screen {
   position: absolute;
-  top: 15.5%; /* tuned to match your TV PNG */
+  top: 15.5%;
   left: 8.5%;
-  width: 90%;
+  width: 65%;
   height: 65%;
   overflow: hidden;
   display: flex;
 }
 
-/* Fake map stays exactly inside TV screen */
-.mapFake {
+.mapIframe {
   width: 100%;
   height: 100%;
-  padding: 12px;
-  overflow: hidden;
-
-  background: linear-gradient(135deg, var(--color-wall-blue), var(--color-carpet-red));
-  color: #0b0504;
-
-  border-radius: 6px;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.35);
-
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  border: none;
 }
 
-.mapTitle {
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.75rem;
-}
-
-.mapSubtitle {
-  font-size: 1rem;
-}
-
-.mapHint {
-  font-size: 0.8rem;
-  opacity: 0.85;
-  margin-top: 10px;
-}
-
-/* Responsive */
+/* MOBILE */
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
+    text-align: center;
   }
 
-  .mapWrapper {
-    order: -1;
+  .heading {
+    text-align: center;
+    font-size: 2.1rem;
+  }
+
+  .lead {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .tvFrame {
-    max-width: 360px;
+    order: -1;
+    max-width: 340px;
+    margin-top: 0;
+  }
+
+  .block h3,
+  .block p {
+    text-align: center;
   }
 }
-/* Typography */
-.heading {
-  font-family: "Staatliches", system-ui, sans-serif;
-  font-size: 2.2rem;
-  margin: 0 0 22px; /* daugiau oro po heading */
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
 
-.lead {
-  margin: 0 0 26px; /* daugiau vietos prieš sekcijas */
-  color: rgba(248, 243, 234, 0.87);
-  line-height: 1.6; /* airy, mažiau "suspausta" */
-  max-width: 580px; /* atitinka TV plotį ir neatrodo siaurai */
-}
+@media (max-width: 500px) {
+  .heading {
+    font-size: 1.9rem;
+  }
 
-.block {
-  margin-top: 28px; /* didesni tarpai tarp skyrių */
-}
-
-.block h3 {
-  margin: 0 0 10px; /* daugiau oro po heading */
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  font-size: 1.05rem;
-}
-
-.block p {
-  margin: 0 0 10px; /* daugiau vietos tekstui kvėpuoti */
-  font-size: 0.95rem;
-  line-height: 1.55; /* gražesnis skaitymui */
-}
-
-.small {
-  font-size: 0.82rem;
-  opacity: 0.8;
-  margin-top: 6px;
-  line-height: 1.4;
-}
-
-/* Grid: daugiau balanso tarp kolonų */
-.grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr; /* kairė šiek tiek platesnė */
-  gap: 60px; /* daugiau oro tarp kolonų */
-  align-items: flex-start;
+  .tvFrame {
+    max-width: 300px;
+  }
 }

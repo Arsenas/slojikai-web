@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap");
-/* MAIN SECTION */
+
+/* SECTION */
 .about {
   background: #0b0b0b;
   color: #f9f4e5;
-  padding: 7rem 40px;
+  padding: 6rem 20px;
   border-bottom: 3px solid rgba(255, 230, 180, 0.18);
   border-top: 3px solid rgba(255, 230, 180, 0.18);
 
@@ -11,31 +12,33 @@
     0 4px 0 rgba(0, 0, 0, 0.7);
 }
 
-/* WRAPPER — two columns */
+/* WRAPPER — centered, responsive */
 .wrapper {
   display: flex;
-  gap: 60px;
+  justify-content: space-between;
+  align-items: flex-start;
+
   max-width: 1100px;
-  margin-left: 240px;
+  margin: 0 auto;
+
+  gap: 60px;
 }
 
-/* LEFT COLUMN */
+/* LEFT COLUMN — text */
 .left {
   flex: 1;
-  max-width: 640px;
+  min-width: 0;
 }
 
-/* RIGHT COLUMN (MESSY IMAGES) */
+/* RIGHT COLUMN — messy photo stack */
 .right {
-  flex: 0 0 300px;
-  position: relative;
+  width: 280px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-left: 150px;
 }
 
-/* MESSY ROTATIONS */
+/* PHOTOS */
 .photo1,
 .photo2,
 .photo3 {
@@ -45,45 +48,37 @@
   background: #111;
   object-fit: cover;
   border-radius: 4px;
-
-  /* Polaroid-ish padding */
   padding: 6px;
 }
 
-/* Individual rotations */
+/* Slight rotations */
 .photo1 {
   transform: rotate(-3deg);
 }
-
 .photo2 {
   transform: rotate(2deg);
 }
-
 .photo3 {
   transform: rotate(-1deg);
 }
 
-/* TEXT STYLES (unchanged from before) */
-
+/* TEXT */
 .heading {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 2.4rem;
-  color: #f9f4e5;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: 1.2rem;
-  margin-left: 140px;
+  color: #f9f4e5;
+
+  margin-bottom: 1.6rem;
   transform: rotate(-1.5deg);
-  display: inline-block;
-  position: relative;
 }
 
-p {
+.left p {
   font-family: "Cousine", monospace;
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1.4rem;
-  max-width: 640px;
 }
 
 .footnote {
@@ -101,4 +96,31 @@ p {
 
 .title {
   font-size: 13px;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .right {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .heading {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .left p {
+    text-align: center;
+  }
+
+  .footnote {
+    justify-content: center;
+  }
 }
